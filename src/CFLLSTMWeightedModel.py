@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 
-class CNNLSTMWeightedModel(nn.Module):
+class CFLLSTMWeightedModel(nn.Module):
     def __init__(self, input_size, hidden_size=16, num_layers=1, dropout=0.5, rho_threshold=0.3):
         super().__init__()
         self.input_size = input_size
