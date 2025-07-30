@@ -319,15 +319,6 @@ python -m pytest tests/
 flake8 src/ baseline/ utils/
 ```
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 📞 Contact
-
-- **Email**: cfl.lstm@example.com
-- **Issues**: [GitHub Issues](https://github.com/yourusername/CFL-LSTM/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/CFL-LSTM/discussions)
 
 ## 🙏 Acknowledgments
 
