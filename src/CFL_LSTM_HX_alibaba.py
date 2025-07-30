@@ -8,7 +8,7 @@ from sklearn.preprocessing import MinMaxScaler
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from src.CNNLSTMWeightedModel import CNNLSTMWeightedModel
+from src.CFLLSTMWeightedModel import CFLLSTMWeightedModel
 from utils.data_utils import save_correlation_results, load_correlation_results, fill_missing, create_dataset_multisource, train_test_split
 from utils.feature_correlation import compute_correlation
 from utils.metrics import calculate_metrics
@@ -174,7 +174,7 @@ def train_and_evaluate(X_with_aux, y_with_aux, scaler_target, selected_aux, para
     if actual_m is None:
         actual_m = params['m']
     input_size = 1 + actual_m
-    model = CNNLSTMWeightedModel(input_size=input_size).to(device)
+    model = CFLLSTMWeightedModel(input_size=input_size).to(device)
     rho_with_aux = torch.tensor([1.0] + [aux['rho'] for aux in selected_aux], dtype=torch.float32, device=device)
     print("\n训练有辅助（带偏移）权重门控模型...")
     train_model(model, X_train.to(device), y_train.to(device), rho_weights=rho_with_aux)
